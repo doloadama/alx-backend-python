@@ -5,7 +5,7 @@
 """
 
 def floor(n: float) -> int:
-    """
-    Returns the floor of a float.
-    """
-    return int(n)
+  """
+  Returns the floor of a float.
+  """
+  return int(n)

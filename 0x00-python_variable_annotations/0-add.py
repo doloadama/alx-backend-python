@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Created on 2023-01-03
 0. Basic annotations - add
 """
+
 def add(a: float, b: float) -> float:
   """
   a type-annotated function add that takes a float a and a
