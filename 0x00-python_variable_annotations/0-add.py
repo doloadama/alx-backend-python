@@ -3,7 +3,7 @@
 Created on 2023-01-03
 0. Basic annotations - add
 """
-def add(a: float, b: float) -> float:
+def add(a, b: float) -> float:
   """
   a type-annotated function add that takes a float a and a
   float b as arguments and returns their sum as a float.
