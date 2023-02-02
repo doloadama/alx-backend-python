@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
 12. Type Checking
 """
+
 from typing import Tuple, List
 
 
