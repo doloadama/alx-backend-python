@@ -4,7 +4,10 @@
 """
 
 
-def sum_list(input_list: list) -> float:
+from typing import List
+
+
+def sum_list(input_list: list[float]) -> float:
     """
     Returns the sum of all the elements in the list
     """
