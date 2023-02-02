@@ -4,10 +4,9 @@
 """
 
 
-from typing import Tuple, List
+from typing import Tuple, List, Any
 
-
-def zoom_array(lst: Tuple[int], factor: int = 2) -> List:
+def zoom_array(lst: Tuple[Any], factor: int = 2) -> List:
     """
     Returns a new list with each element multiplied
     by factor.
