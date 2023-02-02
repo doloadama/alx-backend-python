@@ -2,8 +2,6 @@
 """
 11. More involved type annotations
 """
-
-
 from typing import Union, Any, Mapping, TypeVar
 
 T = TypeVar('T')
