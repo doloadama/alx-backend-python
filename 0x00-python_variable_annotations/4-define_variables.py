@@ -2,6 +2,8 @@
 """
 Define variables
 """
+
+
 # define variables
 a : int = 1
 pi : float = 3.14

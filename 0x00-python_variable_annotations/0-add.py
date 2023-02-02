@@ -3,6 +3,7 @@
 0. Basic annotations - add
 """
 
+
 # Typed annotations
 def add(a: float, b: float) -> float:
 
