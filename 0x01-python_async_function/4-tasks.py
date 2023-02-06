@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-  """
-  4. Tasks
-  """
+"""
+4. Tasks
+"""
 import asyncio
-from 3-tasks import task_wait_random
+from typing import List
+wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-async def task_wait_n(n, max_delay):
+async def task_wait_n(n: int, max_delay: int) -> list[float]:
     """_summary_
 
     Args:
