@@ -3,8 +3,7 @@
 1. Let's execute multiple coroutines at the same time with async
 """
 import asyncio
-import time
-from '1-concurrent_coroutines' import wait_n
+wait_random = __import__('0-basic_async_syntax').wait_random
 
 def measure_time(n: int, max_delay: int) -> float:
     """
@@ -12,7 +11,6 @@ def measure_time(n: int, max_delay: int) -> float:
     :param max_delay: maximum delay in seconds
     :return: average time in seconds
     """
-    start = perf_counter()
-    asyncio.run(wait_n(n, max_delay))
-    elapsed = perf_counter() - start
-    return elapsed / n
+     delay_time = [asyncio.create_task(wait_random(max_delay))
+                  for _ in range(n)]
+    return [await task for task in asyncio.as_completed(delay_time)]
