@@ -14,7 +14,6 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     Args:
         n (int): _description_
         max_delay (int): _description_
-
     Returns:
         List[float]: _description_
     """
