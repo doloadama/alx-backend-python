@@ -3,8 +3,8 @@
 2. Measure the runtime
 """
 from time import perf_counter
-wait_n = __import__('1-concurrent_coroutines').wait_n
 import asyncio
+wait_n = __import__('1-concurrent_coroutines').wait_n
 
 
 async def measure_time(n: int, max_delay: int) -> float:
