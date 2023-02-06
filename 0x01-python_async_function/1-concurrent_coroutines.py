@@ -9,7 +9,6 @@ from typing import List
 
 async def wait_n(n: int, max_delay: int) -> List[float]:
     """_summary_
-
     Args:
         n (int): _description_
         max_delay (int): _description_
