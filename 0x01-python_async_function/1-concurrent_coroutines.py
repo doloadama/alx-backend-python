@@ -4,7 +4,7 @@
 """
 import asyncio
 import time
-from 1-wait_n import wait_n
+from '1-concurrent_coroutines' import wait_n
 
 def measure_time(n, max_delay):
     """
