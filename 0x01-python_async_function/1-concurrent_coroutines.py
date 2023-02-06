@@ -8,6 +8,15 @@ from typing import List
 
 
 async def wait_n(n: int, max_delay: int) -> List[float]:
+    """_summary_
+
+    Args:
+        n (int): _description_
+        max_delay (int): _description_
+
+    Returns:
+        List[float]: _description_
+    """
     tasks = [asyncio.create_task(wait_random(max_delay)) for _ in range(n)]
     delays = [await t for t in asyncio.as_completed(tasks)]
     return sorted(delays)
