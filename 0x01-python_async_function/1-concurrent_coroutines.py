@@ -6,7 +6,7 @@ import asyncio
 import time
 from '1-concurrent_coroutines' import wait_n
 
-def measure_time(n, max_delay):
+def measure_time(n: int, max_delay: int) -> float:
     """
     :param n: number of coroutines
     :param max_delay: maximum delay in seconds
