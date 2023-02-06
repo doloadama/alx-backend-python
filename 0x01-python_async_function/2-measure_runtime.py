@@ -17,7 +17,7 @@ def measure_time(n, max_delay):
     Returns:
         _type_: _description_
     """
-      start_time = time.time()
-      await wait_n(n, max_delay)
-      total_time = time.time() - start_time
-      return total_time / n
+    start_time = time.time()
+    await wait_n(n, max_delay)
+    total_time = time.time() - start_time
+    return total_time / n
