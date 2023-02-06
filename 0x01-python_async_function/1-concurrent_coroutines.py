@@ -12,8 +12,7 @@ def measure_time(n: int, max_delay: int) -> float:
     :param max_delay: maximum delay in seconds
     :return: average time in seconds
     """
-    start_time = time.time()
-    wait_n(n, max_delay)
-    end_time = time.time()
-    total_time = end_time - start_time
-    return total_time / n
+    start = perf_counter()
+    asyncio.run(wait_n(n, max_delay))
+    elapsed = perf_counter() - start
+    return elapsed / n
