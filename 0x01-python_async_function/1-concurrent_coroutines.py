@@ -11,6 +11,6 @@ def measure_time(n: int, max_delay: int) -> float:
     :param max_delay: maximum delay in seconds
     :return: average time in seconds
     """
-     delay_time = [asyncio.create_task(wait_random(max_delay))
+    delay_time = [asyncio.create_task(wait_random(max_delay))
                   for _ in range(n)]
     return [await task for task in asyncio.as_completed(delay_time)]
