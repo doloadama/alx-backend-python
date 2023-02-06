@@ -9,13 +9,13 @@ from 0-basic_async_syntax import wait_random
 
 
 def task_wait_random(max_delay):
-  """_summary_
+    """_summary_
 
-  Args:
-      max_delay (_type_): _description_
+    Args:
+        max_delay (_type_): _description_
 
-  Returns:
-      _type_: _description_
-  """
-    task = asyncio.create_task(wait_random(max_delay))
-    return task
+    Returns:
+        _type_: _description_
+    """
+      task = asyncio.create_task(wait_random(max_delay))
+      return task
