@@ -4,12 +4,12 @@
 """
 
 
-import asyncio
+from asyncio import run
 import time
 wait_n = __import__(' 1-concurrent_coroutines').wait_n
 
 
-async def measure_time(n, max_delay):
+async def measure_time(n: int, max_delay: int) -> float:
     """_summary_
 
     Args:
@@ -18,7 +18,7 @@ async def measure_time(n, max_delay):
     Returns:
         _type_: _description_
     """
-    start_time = time.time()
-    await wait_n(n, max_delay)
-    total_time = time.time() - start_time
-    return total_time / n
+    start_time = time()
+    run(wait_n(n, max_delay))
+    end_time = time()
+    return (end_time - start_time) / n
