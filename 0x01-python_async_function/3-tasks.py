@@ -2,8 +2,6 @@
   """
   3. Tasks
   """
-
-
 import asyncio
 from 0-basic_async_syntax import wait_random
 
