@@ -2,7 +2,8 @@
 """
 0-Async Generator
 """
-import asyncio, random
+import asyncio 
+import random
 
 
 async def async_generator():
