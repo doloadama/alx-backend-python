@@ -10,4 +10,5 @@ async def async_comprehension() -> Generator[float, None, None]:
     collect 10 random numbers using an async comprehension over async_generator
     then return 10 random numbers
     """
-    return [num async for num in async_generator.generate()]
+    resultat = [num async for num in async_generator.generate()]
+    return resultat
