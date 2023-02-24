@@ -35,7 +35,7 @@ class TestAccessNestedMap(unittest.TestCase):
     def test_access_nested_map_exception(self,
                                          nested_map: Dict,
                                          path: Sequence,
-                                        ) -> None:
+                                         ) -> None:
         """
 
         Args:
@@ -57,7 +57,7 @@ class TestGetJson(unittest.TestCase):
             ("http://holberton.io", {"payload": False}),
     ])
     @patch("request.get")
-    def get_json(self,tests_url, test_payload, mock_requests_get):
+    def get_json(self, tests_url, test_payload, mock_requests_get):
         """
         Args:
             url (str): _description_
