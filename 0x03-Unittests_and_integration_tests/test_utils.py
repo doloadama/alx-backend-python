@@ -8,7 +8,7 @@ from parameterized import parameterized
 from typing import Union, Tuple, Dict
 
 
-class  TestAccessNestedMap(unittest.TestCase):
+class TestAccessNestedMap(unittest.TestCase):
     """TestAccessNestedMap class that inherits from
     unittest.TestCase
     """
@@ -25,3 +25,19 @@ class  TestAccessNestedMap(unittest.TestCase):
         Tests the acces_nested_map method
         """
         self.assertEqual(access_nested_map(nested_map, path), expected)
+    @parameterized.expand([
+        ({}, ("a",),  KeyError),
+        ({"a": 1}, ("a", "b"), KeyError),
+    ])
+    def test_access_nested_map_exception(self,
+                                         nested_map: Dict,
+                                         path: Tuple,
+                                         expected: Union[Dict, int]) -> None:
+        """
+
+        Args:
+            nested_map (Dict): _description_
+            path (Tuple): _description_
+            expected (Union[Dict, int]): _description_
+        """
+        self.assertRaises(access_nested_map(nested_map, path), expected)
