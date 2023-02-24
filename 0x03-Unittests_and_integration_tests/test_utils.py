@@ -51,21 +51,18 @@ class TestGetJson(unittest.TestCase):
     """
     Tests utils.get_Json
     """
-
     @parameterized.expand([
             ("http://example.com", {"payload": True}),
             ("http://holberton.io", {"payload": False}),
     ])
-    @patch("requests.get")
-    def get_json(self, tests_url, test_payload, mock_requests_get):
+    def test_get_json(self, test_url, test_payload, mock_requests_get):
         """
+        Test the get_json method to ensure it returns the expected output.
         Args:
-            url (str): _description_
-
-        Returns:
-            Dict: _description_
+            url: url to send http request to
+            payload: expected json response
         """
         mock_requests_get.return_value.json.return_value = test_payload
-        result = get_json(tests_url)
+        result = get_json(test_url)
         self.assertEqual(result, test_payload)
-        mock_requests_get.assert_called_once_with(tests_url)
+        mock_requests_get.assert_called_once_with(test_url)
