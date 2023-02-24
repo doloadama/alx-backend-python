@@ -33,7 +33,7 @@ class TestAccessNestedMap(unittest.TestCase):
     def test_access_nested_map_exception(self,
                                          nested_map: Dict,
                                          path: Tuple,
-                                         expected: Union[Dict, int]) -> None:
+                                         exception: Exception) -> None:
         """
 
         Args:
@@ -41,4 +41,4 @@ class TestAccessNestedMap(unittest.TestCase):
             path (Tuple): _description_
             expected (Union[Dict, int]): _description_
         """
-        self.assertRaises(access_nested_map(nested_map, path), expected)
+        self.assertRaises(access_nested_map(nested_map, path), exception)
