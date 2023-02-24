@@ -41,4 +41,5 @@ class TestAccessNestedMap(unittest.TestCase):
             path (Tuple): _description_
             expected (Union[Dict, int]): _description_
         """
-        self.assertRaises(access_nested_map(nested_map, path), Exception)
+        with self.assertRaises(Exception):
+            access_nested_map(nested_map, path)
