@@ -25,6 +25,7 @@ class TestAccessNestedMap(unittest.TestCase):
         Tests the acces_nested_map method
         """
         self.assertEqual(access_nested_map(nested_map, path), expected)
+
     @parameterized.expand([
         ({}, ("a",),  KeyError),
         ({"a": 1}, ("a", "b"), KeyError),
