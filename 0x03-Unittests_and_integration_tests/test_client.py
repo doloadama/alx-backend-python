@@ -42,6 +42,7 @@ class TestGithubOrgClient(unittest.TestCase):
             test_repo_url = test_org._public_repos_url
             self.assertEqual(test_repo_url, m.return_value.get('repos_url'))
             m.assert_called_once()
+
     @patch('client.get_json', return_value=[{'name': 'Holberton'},
                                             {'name': 89},
                                             {'name': 'alx'}])
@@ -59,6 +60,7 @@ class TestGithubOrgClient(unittest.TestCase):
                 self.assertIn(mock_repo.return_value[i]['name'], test_repo)
             mock_repo.assert_called_once()
             m.assert_called_once()
+
     @parameterized.expand([
         ({"license": {"key": "my_license"}}, "my_license", True),
         ({"license": {"key": "other_license"}}, "my_license", False)
