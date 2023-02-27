@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
-"""
-4. Parameterize and patch as decorators
-"""
 import unittest
 from unittest.mock import patch, PropertyMock
 from parameterized import parameterized, parameterized_class
+
 import client
 from client import GithubOrgClient
 from fixtures import TEST_PAYLOAD
@@ -12,7 +10,7 @@ from fixtures import TEST_PAYLOAD
 
 class TestGithubOrgClient(unittest.TestCase):
     """
-    Test the GithubOrgClient
+    Test the GithubOrgClient class methods
     """
     @parameterized.expand([
         ("google"),
@@ -21,7 +19,7 @@ class TestGithubOrgClient(unittest.TestCase):
     @patch('client.get_json', return_value={"payload": True})
     def test_org(self, org, mock_org):
         """
-        est TestGithubOrgClient's org method
+        Test TestGithubOrgClient's org method
         Args:
             org (str): organisation's name
         """
@@ -32,8 +30,8 @@ class TestGithubOrgClient(unittest.TestCase):
 
     def test_public_repos_url(self):
         """
-        Test TestGitubClient's _public_repos_url method works
-        as expected
+        Test TestGithubOrgClient's _public_repos_url method works
+        as expected.
         """
         with patch.object(GithubOrgClient,
                           'org',
@@ -45,7 +43,7 @@ class TestGithubOrgClient(unittest.TestCase):
             m.assert_called_once()
 
     @patch('client.get_json', return_value=[{'name': 'Holberton'},
-                                            {'name': 89},
+                                            {'name': '89'},
                                             {'name': 'alx'}])
     def test_public_repos(self, mock_repo):
         """
@@ -55,10 +53,11 @@ class TestGithubOrgClient(unittest.TestCase):
                           '_public_repos_url',
                           new_callable=PropertyMock,
                           return_value="https://api.github.com/") as m:
+
             test_client = GithubOrgClient('holberton')
             test_repo = test_client.public_repos()
-            for i in range(3):
-                self.assertIn(mock_repo.return_value[i]['name'], test_repo)
+            for idx in range(3):
+                self.assertIn(mock_repo.return_value[idx]['name'], test_repo)
             mock_repo.assert_called_once()
             m.assert_called_once()
 
